@@ -13,7 +13,7 @@ def fetch_gold_passbook_twd():
     try:
         response = requests.get(GOLD_RATE_URL, timeout=10)
         response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'lxml')
+        soup = BeautifulSoup(response.text, 'html.parser')
 
         # Find the row containing "Gold Passbook"
         # The structure is complicated, let's look for the cell with text "Gold Passbook"
